@@ -21,8 +21,12 @@ export class GroqApi implements ICredentialType {
 	// The block below tells how this credential can be tested
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://example.com/',
-			url: '',
+			baseURL: 'https://api.groq.com',
+			url: '/openai/v1/models',
+			method: 'GET',
+			headers: {
+				Authorization: '={{"Bearer "+$credentials.token}}',
+			},
 		},
 	};
 }

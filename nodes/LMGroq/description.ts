@@ -8,8 +8,10 @@ export const groqDescription: Partial<INodeTypeDescription> = {
 		},
 	],
 	requestDefaults: {
-		ignoreHttpStatusErrors: true,
-		baseURL: 'https://example.com',
+		baseURL: 'https://api.groq.com',
+		headers: {
+			Authorization: '={{"Bearer "+$credentials.token}}',
+		},
 	},
 };
 
@@ -17,26 +19,39 @@ export const groqModel: INodeProperties = {
 	displayName: 'Model',
 	name: 'model',
 	type: 'options',
-	default: 'mixtral-8x7b-32768',
+	default: 'llama3-70b-8192',
 	description: 'The model which will generate the completion.',
-	options: [
-		{
-			name: 'mixtral',
-			value: 'mixtral-8x7b-32768',
-		},
-		{
-			name: 'llama2',
-			value: 'llama2-70b-4096',
-		},
-		{
-			name: 'gemma',
-			value: 'gemma-7b-it',
-		},
-	],
-	routing: {
-		send: {
-			type: 'body',
-			property: 'model',
+	typeOptions: {
+		loadOptions: {
+			routing: {
+				request: {
+					method: 'GET',
+					url: '/openai/v1/models',
+				},
+				output: {
+					postReceive: [
+						{
+							type: 'rootProperty',
+							properties: {
+								property: 'data',
+							},
+						},
+						{
+							type: 'setKeyValue',
+							properties: {
+								name: '={{$responseItem.id}}',
+								value: '={{$responseItem.id}}',
+							},
+						},
+						{
+							type: 'sort',
+							properties: {
+								key: 'name',
+							},
+						},
+					],
+				},
+			},
 		},
 	},
 	required: true,
