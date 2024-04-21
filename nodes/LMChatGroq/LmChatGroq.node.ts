@@ -7,10 +7,10 @@ import {
 	type SupplyData,
 } from 'n8n-workflow';
 
-import { ChatGroq } from '../../utils/fix-json';
 import { logWrapper } from '../../utils/log';
 import { getConnectionHintNoticeField } from '../../utils/fields';
 import { groqModel, groqOptions, groqDescription } from '../LMGroq/description';
+import { ChatGroq } from '@langchain/groq';
 
 export class LmChatGroq implements INodeType {
 	description: INodeTypeDescription = {
@@ -32,7 +32,7 @@ export class LmChatGroq implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama/',
+						url: 'https://console.groq.com/docs/quickstart',
 					},
 				],
 			},

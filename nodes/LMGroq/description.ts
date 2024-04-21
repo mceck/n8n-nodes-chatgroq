@@ -69,7 +69,7 @@ export const groqOptions: INodeProperties = {
 			displayName: 'Sampling Temperature',
 			name: 'temperature',
 			default: 0.7,
-			typeOptions: { maxValue: 1, minValue: 0, numberPrecision: 1 },
+			typeOptions: { maxValue: 1, minValue: 0, numberPrecision: 2 },
 			description:
 				'Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive.',
 			type: 'number',
@@ -78,7 +78,7 @@ export const groqOptions: INodeProperties = {
 			displayName: 'Max tokens',
 			name: 'maxTokens',
 			default: 800,
-			typeOptions: { maxValue: 13000, minValue: -1, numberPrecision: 1 },
+			typeOptions: { maxValue: 50000, minValue: 1, numberPrecision: 0 },
 			description: 'The maximum number of tokens to generate.',
 			type: 'number',
 		},
