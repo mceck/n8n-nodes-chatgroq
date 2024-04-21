@@ -17,7 +17,7 @@ export class LmGroq implements INodeType {
 		displayName: 'Groq Model',
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-name-miscased
 		name: 'lmGroq',
-		icon: 'file:groq.png',
+		icon: 'file:groq.svg',
 		group: ['transform'],
 		version: 1,
 		description: 'Language Model Groq',

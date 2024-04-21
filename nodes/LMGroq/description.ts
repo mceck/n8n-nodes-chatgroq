@@ -19,8 +19,9 @@ export const groqModel: INodeProperties = {
 	displayName: 'Model',
 	name: 'model',
 	type: 'options',
+	// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
 	default: 'llama3-70b-8192',
-	description: 'The model which will generate the completion.',
+	description: 'The model which will generate the completion',
 	typeOptions: {
 		loadOptions: {
 			routing: {
@@ -75,11 +76,11 @@ export const groqOptions: INodeProperties = {
 			type: 'number',
 		},
 		{
-			displayName: 'Max tokens',
+			displayName: 'Max Tokens',
 			name: 'maxTokens',
 			default: 800,
 			typeOptions: { maxValue: 50000, minValue: 1, numberPrecision: 0 },
-			description: 'The maximum number of tokens to generate.',
+			description: 'The maximum number of tokens to generate',
 			type: 'number',
 		},
 	],

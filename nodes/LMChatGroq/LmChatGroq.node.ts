@@ -17,7 +17,7 @@ export class LmChatGroq implements INodeType {
 		displayName: 'Groq Chat Model',
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-name-miscased
 		name: 'lmChatGroq',
-		icon: 'file:groq.png',
+		icon: 'file:groq.svg',
 		group: ['transform'],
 		version: 1,
 		description: 'Language Model Groq',

@@ -2,7 +2,7 @@
 
 # n8n-nodes-chatgroq
 
-![Model image](nodes/LMGroq/groq.png)
+![Model image](nodes/LMGroq/groq.svg)
 
 This node add Groq chat models to n8n
 
