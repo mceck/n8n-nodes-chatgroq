@@ -7,7 +7,6 @@ import {
 	type SupplyData,
 } from 'n8n-workflow';
 
-import { logWrapper } from '../../utils/log';
 import { getConnectionHintNoticeField } from '../../utils/fields';
 import { groqModel, groqOptions, groqDescription } from '../LMGroq/description';
 import { ChatGroq } from '@langchain/groq';
@@ -63,7 +62,7 @@ export class LmChatGroq implements INodeType {
 		});
 
 		return {
-			response: logWrapper(model, this),
+			response: model,
 		};
 	}
 }
