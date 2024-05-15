@@ -10,6 +10,7 @@ import {
 import { getConnectionHintNoticeField } from '../../utils/fields';
 import { groqDescription, groqModel, groqOptions } from './description';
 import { ChatGroq } from '@langchain/groq';
+import { N8nLlmTracing } from '../../utils/N8nLlmTracing';
 
 export class LmGroq implements INodeType {
 	description: INodeTypeDescription = {
@@ -57,8 +58,9 @@ export class LmGroq implements INodeType {
 
 		const model = new ChatGroq({
 			apiKey: credentials.token as string,
-			modelName: modelName,
+			model: modelName,
 			...options,
+			callbacks: [new N8nLlmTracing(this)],
 		});
 
 		return {

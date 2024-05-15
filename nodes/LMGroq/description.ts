@@ -55,6 +55,12 @@ export const groqModel: INodeProperties = {
 			},
 		},
 	},
+	routing: {
+		send: {
+			type: 'body',
+			property: 'model',
+		},
+	},
 	required: true,
 };
 

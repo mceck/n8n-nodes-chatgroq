@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-chatgroq",
-	"version": "0.1.2",
+	"version": "0.1.4",
 	"description": "n8n nodes for Langchain Chat Groq",
 	"keywords": [
 		"n8n-community-node-package"
@@ -53,8 +53,6 @@
 	"dependencies": {
 		"@langchain/community": "*",
 		"@langchain/groq": "^0.0.7",
-		"langchain": "*",
-		"lodash": "^4.17.21",
-		"tmp-promise": "^3.0.3"
+		"langchain": "*"
 	}
 }
