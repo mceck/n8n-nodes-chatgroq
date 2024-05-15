@@ -3,6 +3,7 @@ import { ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-wo
 export class GroqApi implements ICredentialType {
 	name = 'groqApi';
 	displayName = 'Groq Credentials API';
+	documentationUrl = 'https://console.groq.com/docs/quickstart';
 	properties: INodeProperties[] = [
 		// The credentials to get from user and save encrypted.
 		// Properties can be defined exactly in the same way
@@ -10,6 +11,7 @@ export class GroqApi implements ICredentialType {
 		{
 			displayName: 'Token',
 			name: 'token',
+			required: true,
 			type: 'string',
 			typeOptions: {
 				password: true,
