@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-chatgroq",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "n8n nodes for Langchain Chat Groq",
 	"keywords": [
 		"n8n-community-node-package"
